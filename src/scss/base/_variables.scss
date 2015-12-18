@@ -6,19 +6,30 @@
 // Container and Gutter
 // ----------------------------------------------
 
-$gutter: 40px;
-$maxWidth: 1200px + $gutter*2;
+$gutter: 50px;
+$maxWidth: 700px + $gutter*2;
 
 
 // Colors
 // ----------------------------------------------
 
-$black: #000;
-$white: #fff;
+$cod-gray: #04090d;
+$iron: #cccdce;
+$caded-blue: #aab4be;
+$turbo: #fbe800;
+$carmine-pink: #ED4049;
+
+$accent-color: $turbo;
 
 
 // Fonts
 // ----------------------------------------------
 
-$font-display: sans-serif;
-$font-text: sans-serif;
+$font-display: "Fira Sans", sans-serif;
+$font-text: "Fira Sans", sans-serif;
+
+
+// Transitions
+// ----------------------------------------------
+
+$duration: .25s;

@@ -2,6 +2,14 @@
 // Base: Typography
 // ----------------------------------------------------------------------------
 
+body {
+	font: 1.155em/1.5em $font-text;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: $iron;
+	background: $cod-gray;
+}
+
 // A better looking default horizontal rule
 
 hr {
@@ -10,5 +18,40 @@ hr {
 	padding: 0;
 	margin: 1em 0;
 	border: 0;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid $caded-blue;
+}
+
+// Selection color
+
+::selection {
+	text-shadow: none;
+	opacity: 1;
+	background: $iron;
+}
+
+// Headlines
+// ----------------------------------------------
+
+h1, h2, h3, h4 {
+	font-family: $font-display;
+	font-weight: bold;
+	color: $iron;
+}
+
+h1 {
+	font-size: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	font-size: 1.3em;
+}
+
+h3 {
+	font-size: 1.2em;
+}
+
+h4 {
+	font-size: 1.1em;
 }

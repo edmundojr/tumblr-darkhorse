@@ -1,0 +1,114 @@
+//
+// Modules: posts
+// ----------------------------------------------------------------------------
+
+.post {
+	position: relative;
+	margin-bottom: 20%;
+	background: rgba(255,255,255,.05);
+
+
+	// Post types
+	// ----------------------------------------------
+
+	&--text,
+	&--photo,
+	&--link,
+	&--chat,
+	&--audio,
+	&--video {
+		@extend .post;
+	}
+
+
+	// Content
+	// ----------------------------------------------
+
+	&__content {
+		padding: $gutter/2 $gutter;
+
+		@include breakpoint(600) {
+			padding: $gutter/2;
+		}
+	}
+
+
+	// Post Title
+	// ----------------------------------------------
+
+	&__title {
+		color: $iron;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+
+			&:hover,
+			&:focus {
+				color: $iron;
+			}
+		}
+	}
+
+
+	// Post Meta
+	// ----------------------------------------------
+
+	&__meta {
+		position: absolute;
+		top: $gutter;
+		right: 0;
+		font-size: .8em;
+		font-weight: bold;
+		transform-origin: top right;
+		transform: rotate(90deg) translate(100%, -50%);
+
+		a {
+			display: inline-block;
+			padding: .5em 1em;
+			text-decoration: none;
+			color: $iron;
+			transition: color $duration;
+
+			&:hover,
+			&:focus {
+				color: $accent-color;
+			}
+		}
+	}
+
+
+	// Post Actions
+	// ----------------------------------------------
+
+	&__actions {
+		position: absolute;
+		left: $gutter;
+		bottom: 0;
+		font-size: .8em;
+		transform-origin: top right;
+		transform: translateY(50%);
+
+		a {
+			display: inline-block;
+			padding: .75em;
+			text-decoration: none;
+
+			svg {
+				max-width: 20px;
+				fill: $iron;
+				transition: all $duration;
+			}
+
+			&:first-child {
+				margin-left: -.75em;
+			}
+
+			&:hover svg,
+			&:focus svg {
+				fill: $accent-color;
+				transform: scale(1.2);
+			}
+		}
+	}
+}
