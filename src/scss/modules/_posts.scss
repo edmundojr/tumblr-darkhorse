@@ -6,7 +6,7 @@
 	position: relative;
 	margin-bottom: 20%;
 	background: rgba(255,255,255,.03);
-	outline: 1px solid rgba(255,255,255,.06);
+	border: 1px solid rgba(255,255,255,.03);
 	box-shadow: 0 100px 100px -50px rgba(0,0,0,.3);
 	transform-origin: top center;
 
@@ -116,5 +116,30 @@
 				}
 			}
 		}
+	}
+}
+
+
+//
+// Chat
+// ----------------------------------------------------------------------------
+
+.chat {
+	padding: 0;
+	list-style: none;
+	color: $caded-blue;
+
+	li {
+		padding: 1em $gutter;
+		margin: 0 (-$gutter);
+		border-top: 1px solid rgba(255,255,255,.03);
+	}
+
+	// Label
+
+	&__label {
+		display: block;
+		font-weight: bold;
+		color: $accent-color;
 	}
 }
