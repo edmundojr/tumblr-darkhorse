@@ -85,9 +85,7 @@
 				color: $accent-color;
 
 				svg {
-					fill: transparent;
-					stroke: $iron;
-					stroke-width: 3;
+					fill: $accent-color;
 				}
 			}
 		}
