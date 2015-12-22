@@ -55,3 +55,49 @@ h3 {
 h4 {
 	font-size: 1.1em;
 }
+
+
+// Post Chat
+// ----------------------------------------------
+
+.chat {
+	padding: 0;
+	list-style: none;
+	color: $caded-blue;
+
+	li {
+		padding: 1em $gutter;
+		margin: 0 (-$gutter);
+		border-top: 1px solid rgba(255,255,255,.03);
+
+		&:first-child {
+			border-top: none;
+		}
+	}
+
+	// Label
+
+	&__label {
+		display: block;
+		font-weight: bold;
+		color: $accent-color;
+	}
+}
+
+
+// Post Quote
+// ----------------------------------------------
+
+.quote {
+	margin-left: 0;
+	font-size: 1.3em;
+	font-style: italic;
+	line-height: 1.4em;
+
+	cite {
+		display: block;
+		margin-top: 1em;
+		font-size: .7em;
+		font-style: normal;
+	}
+}

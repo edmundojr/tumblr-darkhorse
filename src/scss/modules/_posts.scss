@@ -4,6 +4,7 @@
 
 .post {
 	position: relative;
+	min-height: 300px;
 	margin-bottom: 20%;
 	background: rgba(255,255,255,.03);
 	border: 1px solid rgba(255,255,255,.03);
@@ -116,30 +117,5 @@
 				}
 			}
 		}
-	}
-}
-
-
-//
-// Chat
-// ----------------------------------------------------------------------------
-
-.chat {
-	padding: 0;
-	list-style: none;
-	color: $caded-blue;
-
-	li {
-		padding: 1em $gutter;
-		margin: 0 (-$gutter);
-		border-top: 1px solid rgba(255,255,255,.03);
-	}
-
-	// Label
-
-	&__label {
-		display: block;
-		font-weight: bold;
-		color: $accent-color;
 	}
 }
