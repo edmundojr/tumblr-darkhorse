@@ -5,27 +5,17 @@
 .post {
 	position: relative;
 	margin-bottom: 20%;
-	background: rgba(255,255,255,.05);
-
-
-	// Post types
-	// ----------------------------------------------
-
-	&--text,
-	&--photo,
-	&--link,
-	&--chat,
-	&--audio,
-	&--video {
-		@extend .post;
-	}
+	background: rgba(255,255,255,.03);
+	outline: 1px solid rgba(255,255,255,.06);
+	box-shadow: 0 100px 100px -50px rgba(0,0,0,.3);
+	transform-origin: top center;
 
 
 	// Content
 	// ----------------------------------------------
 
 	&__content {
-		padding: $gutter/2 $gutter;
+		padding: $gutter/2.25 $gutter $gutter/1.5;
 
 		@include breakpoint(600) {
 			padding: $gutter/2;
@@ -37,16 +27,30 @@
 	// ----------------------------------------------
 
 	&__title {
-		color: $iron;
+		color: $accent-color;
 
 		a {
+			display: inline-block;
 			text-decoration: none;
 			color: inherit;
+			transition: color $duration;
 
 			&:hover,
 			&:focus {
-				color: $iron;
+				color: #fff;
+
+				svg {
+					fill: currentColor;
+				}
 			}
+		}
+
+		svg {
+			display: inline-block;
+			vertical-align: bottom;
+			max-width: 24px;
+			margin-right: .5em;
+			fill: $accent-color;
 		}
 	}
 
@@ -56,12 +60,11 @@
 
 	&__meta {
 		position: absolute;
-		top: $gutter;
-		right: 0;
 		font-size: .8em;
 		font-weight: bold;
 		transform-origin: top right;
-		transform: rotate(90deg) translate(100%, -50%);
+
+		// Links
 
 		a {
 			display: inline-block;
@@ -70,44 +73,47 @@
 			color: $iron;
 			transition: color $duration;
 
-			&:hover,
-			&:focus {
-				color: $accent-color;
-			}
-		}
-	}
-
-
-	// Post Actions
-	// ----------------------------------------------
-
-	&__actions {
-		position: absolute;
-		left: $gutter;
-		bottom: 0;
-		font-size: .8em;
-		transform-origin: top right;
-		transform: translateY(50%);
-
-		a {
-			display: inline-block;
-			padding: .75em;
-			text-decoration: none;
-
 			svg {
 				max-width: 20px;
 				fill: $iron;
 				transition: all $duration;
 			}
 
-			&:first-child {
-				margin-left: -.75em;
-			}
+			&:hover,
+			&:focus {
+				color: $accent-color;
 
-			&:hover svg,
-			&:focus svg {
-				fill: $accent-color;
-				transform: scale(1.2);
+				svg {
+					fill: transparent;
+					stroke: $iron;
+					stroke-width: 3;
+				}
+			}
+		}
+
+		// Post meta / Aside
+
+		&--aside {
+			@extend .post__meta;
+			top: $gutter;
+			right: 0;
+			transform: rotate(90deg) translate(100%, -50%);
+		}
+
+		// Post meta / Footer
+
+		&--footer {
+			@extend .post__meta;
+			left: $gutter;
+			bottom: 0;
+			transform: translateY(50%);
+
+			a {
+				padding: .75em;
+
+				&:first-child {
+					margin-left: -.75em;
+				}
 			}
 		}
 	}

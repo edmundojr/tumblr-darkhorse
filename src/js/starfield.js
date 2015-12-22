@@ -15,7 +15,7 @@ scene.add(camera);
 
 renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setClearColor(0x04090d, 1);
+renderer.setClearColor(0x04090d, 0);
 
 document.body.appendChild(renderer.domElement);
 

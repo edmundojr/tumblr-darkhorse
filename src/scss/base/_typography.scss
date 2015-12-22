@@ -3,11 +3,11 @@
 // ----------------------------------------------------------------------------
 
 body {
-	font: 1.155em/1.5em $font-text;
+	font: 1.25em/1.5em $font-text;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $iron;
-	background: $cod-gray;
+	background: $background;
 }
 
 // A better looking default horizontal rule
