@@ -8,6 +8,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	color: $iron;
 	background: $background;
+
+	@include breakpoint(800) {
+		font-size: 1.125em;
+	}
 }
 
 // A better looking default horizontal rule
@@ -123,4 +127,8 @@ h4 {
 
 .photo {
 	margin: -1px -1px 0;
+
+	img {
+		width: 100%;
+	}
 }
