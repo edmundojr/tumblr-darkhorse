@@ -8,14 +8,9 @@
 .container {
 	@include clearfix();
 	position: relative;
-	width: 100%;
+	width: 90%;
 	max-width: $maxWidth;
-	padding: 0 $gutter;
 	margin: 0 auto;
-
-	@include breakpoint(600) {
-		padding: 0 $gutter/2;
-	}
 }
 
 
