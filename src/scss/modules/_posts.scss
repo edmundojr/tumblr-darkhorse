@@ -8,7 +8,7 @@
 	margin-bottom: 20%;
 	background: rgba(255,255,255,.03);
 	border: 1px solid rgba(255,255,255,.03);
-	box-shadow: 0 100px 100px -50px rgba(0,0,0,.2);
+	box-shadow: 0 50px 80px 0 rgba(0,0,0,.2);
 	transform-origin: top center;
 
 
@@ -16,10 +16,12 @@
 	// ----------------------------------------------
 
 	&__content {
-		padding: $gutter/2.25 $gutter $gutter/1.5;
+		padding: ($gutter/2.5) $gutter ($gutter/1.5);
 
-		@include breakpoint(600) {
-			padding: $gutter/2;
+		img {
+			width: calc(100% + #{$gutter*2.31});
+			max-width: none;
+			margin: 1em (-$gutter*1.15);
 		}
 	}
 
@@ -65,6 +67,33 @@
 		font-weight: bold;
 		transform-origin: top right;
 
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			display: inline-block;
+
+			ul {
+				display: none;
+				position: absolute;
+				top: 100%;
+			}
+
+			&:hover ul {
+				display: block;
+			}
+		}
+
+
+		svg {
+			max-width: 20px;
+			fill: $iron;
+			transition: all $duration;
+		}
+
 		// Links
 
 		a {
@@ -74,11 +103,7 @@
 			color: $iron;
 			transition: color $duration;
 
-			svg {
-				max-width: 20px;
-				fill: $iron;
-				transition: all $duration;
-			}
+
 
 			&:hover,
 			&:focus {
@@ -86,6 +111,7 @@
 
 				svg {
 					fill: $accent-color;
+					transform: scale(1.2);
 				}
 			}
 		}
