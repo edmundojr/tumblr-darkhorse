@@ -9,7 +9,6 @@
 	background: rgba(255,255,255,.03);
 	border: 1px solid rgba(255,255,255,.03);
 	box-shadow: 0 50px 80px 0 rgba(0,0,0,.2);
-	transform-origin: top center;
 
 
 	// Content
@@ -75,35 +74,29 @@
 
 		li {
 			display: inline-block;
-
-			ul {
-				display: none;
-				position: absolute;
-				top: 100%;
-			}
-
-			&:hover ul {
-				display: block;
-			}
 		}
-
 
 		svg {
 			max-width: 20px;
 			fill: $iron;
+			cursor: pointer;
 			transition: all $duration;
+
+			&:hover,
+			&:focus {
+				fill: $accent-color;
+				transform: scale(1.2);
+			}
 		}
 
 		// Links
 
 		a {
 			display: inline-block;
-			padding: .5em 1em;
+			padding: .4em 1em;
 			text-decoration: none;
 			color: $iron;
 			transition: color $duration;
-
-
 
 			&:hover,
 			&:focus {
@@ -112,6 +105,75 @@
 				svg {
 					fill: $accent-color;
 					transform: scale(1.2);
+				}
+			}
+		}
+
+		// Share
+
+		.share {
+			position: relative;
+			padding: .4em 1em;
+			perspective: 600px;
+
+			// Share tooltip
+
+			ul {
+				position: absolute;
+				bottom: 100%;
+				padding: .25em;
+				text-align: center;
+				background: rgba(255,255,255,.925);
+				box-shadow: 0 5px 15px rgba(0,0,0,.5);
+				opacity: 0;
+				transform-origin: bottom center;
+				transform: translate(-25%, 0);
+				transition: all .3s;
+
+				&:before {
+					position: absolute;
+					top: 100%;
+					left: 50%;
+					border-top: 8px solid rgba(255,255,255,.925);
+					border-left: 8px solid transparent;
+					border-right: 8px solid transparent;
+					transform: translateX(-50%);
+					content: "";
+				}
+			}
+
+			&:hover ul {
+				display: block;
+				opacity: 1;
+				transform: translate(-25%, -.5em);
+			}
+
+			a {
+				padding: .4em .5em;
+
+				svg {
+					max-width: 20px;
+					fill: $background;
+				}
+			}
+
+			// Icon Colors
+
+			li {
+
+				// Facebook
+				&:nth-child(1) svg {
+					fill: #3b5998;
+				}
+
+				// Twitter
+				&:nth-child(2) svg {
+					fill: #55acee;
+				}
+
+				// Pinterest
+				&:nth-child(3) svg {
+					fill: #bd081c;
 				}
 			}
 		}
@@ -131,15 +193,7 @@
 			@extend .post__meta;
 			left: $gutter;
 			bottom: 0;
-			transform: translateY(50%);
-
-			a {
-				padding: .75em;
-
-				&:first-child {
-					margin-left: -.75em;
-				}
-			}
+			transform: translate(-1em, 50%);
 		}
 	}
 }
