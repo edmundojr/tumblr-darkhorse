@@ -66,37 +66,22 @@
 		font-weight: bold;
 		transform-origin: top right;
 
-		ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-
-		li {
-			display: inline-block;
-		}
-
-		svg {
-			max-width: 20px;
-			fill: $iron;
-			cursor: pointer;
-			transition: all $duration;
-
-			&:hover,
-			&:focus {
-				fill: $accent-color;
-				transform: scale(1.2);
-			}
-		}
-
 		// Links
 
-		a {
-			display: inline-block;
-			padding: .4em 1em;
+		&__item {
+			position: relative;
+			float: left;
+			padding: .5em 1em;
 			text-decoration: none;
 			color: $iron;
-			transition: color $duration;
+			transition: all $duration;
+
+			svg {
+				max-width: 20px;
+				fill: $iron;
+				cursor: pointer;
+				transition: all $duration;
+			}
 
 			&:hover,
 			&:focus {
@@ -104,7 +89,11 @@
 
 				svg {
 					fill: $accent-color;
-					transform: scale(1.2);
+				}
+
+				.share a {
+					opacity: 1;
+					transform: none !important;
 				}
 			}
 		}
@@ -112,73 +101,36 @@
 		// Share
 
 		.share {
-			position: relative;
-			padding: .4em 1em;
-			perspective: 600px;
-
-			// Share tooltip
-
-			ul {
-				position: absolute;
-				bottom: 100%;
-				padding: .25em;
-				text-align: center;
-				background: rgba(255,255,255,.925);
-				box-shadow: 0 5px 15px rgba(0,0,0,.5);
-				opacity: 0;
-				transform-origin: bottom center;
-				transform: translate(-25%, 0);
-				transition: all .3s;
-
-				&:before {
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					border-top: 8px solid rgba(255,255,255,.925);
-					border-left: 8px solid transparent;
-					border-right: 8px solid transparent;
-					transform: translateX(-50%);
-					content: "";
-				}
-			}
-
-			&:hover ul {
-				display: block;
-				opacity: 1;
-				transform: translate(-25%, -.5em);
-			}
+			position: absolute;
+			top: 100%;
+			left: 1.75em;
+			width: 132px;
+			transform: translateX(-50%);
 
 			a {
-				padding: .4em .5em;
+				float: left;
+				padding: .5em .75em;
+				opacity: 0;
+				transition: all $duration;
 
-				svg {
-					max-width: 20px;
-					fill: $background;
-				}
-			}
-
-			// Icon Colors
-
-			li {
-
-				// Facebook
-				&:nth-child(1) svg {
-					fill: #3b5998;
+				&:nth-child(1) {
+					transform: translate(100%,-100%);
+					transition-delay: .05s;
 				}
 
-				// Twitter
-				&:nth-child(2) svg {
-					fill: #55acee;
+				&:nth-child(2) {
+					transform: translate(0,-100%);
+					transition-delay: .1s;
 				}
 
-				// Pinterest
-				&:nth-child(3) svg {
-					fill: #bd081c;
+				&:nth-child(3) {
+					transform: translate(-100%,-100%);
+					transition-delay: .15s;
 				}
 			}
 		}
 
-		// Post meta / Aside
+		// Post meta aside
 
 		&--aside {
 			@extend .post__meta;
@@ -187,7 +139,7 @@
 			transform: rotate(90deg) translate(100%, -50%);
 		}
 
-		// Post meta / Footer
+		// Post meta footer
 
 		&--footer {
 			@extend .post__meta;

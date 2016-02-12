@@ -36,18 +36,20 @@
 		display: block;
 		width: 30px;
 		height: 30px;
+		color: $iron;
+		transition: transform $duration;
 
-		svg {
-			max-width: 20px;
-			fill: $iron;
-			transition: all $duration;
-		}
-
-		&:hover svg,
-		&:focus svg {
-			fill: $accent-color;
+		&:hover,
+		&:focus {
+			color: $accent-color;
 			transform: scale(1.2);
 		}
+	}
+
+	svg {
+		max-width: 20px;
+		fill: currentColor;
+		transition: color $duration;
 	}
 }
 
