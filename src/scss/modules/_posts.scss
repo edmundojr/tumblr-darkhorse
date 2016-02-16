@@ -111,7 +111,7 @@
 				float: left;
 				padding: .5em .75em;
 				opacity: 0;
-				transition: all $duration;
+				transition: all $duration $easeOutBack;
 
 				&:nth-child(1) {
 					transform: translate(100%,-100%);
@@ -134,7 +134,7 @@
 
 		&--aside {
 			@extend .post__meta;
-			top: $gutter;
+			top: 2.5em;
 			right: 0;
 			transform: rotate(90deg) translate(100%, -50%);
 		}
