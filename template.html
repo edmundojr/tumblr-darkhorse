@@ -17,6 +17,7 @@
 	<meta name="text:Disqus Shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
 
+	<meta name="if:Social Avatar" content="0">
 	<meta name="if:Social Icons" content="1">
 	<meta name="text:Username on Dribbble" content="">
 	<meta name="text:Username on Facebook" content="">
@@ -37,289 +38,256 @@
 <body>
 
 	<header class="header container" role="banner">
+
 		{block:ShowAvatar}
-		<figure class="header__avatar">
-			<img src="{PortraitURL-128}" alt="{Title}">
-		</figure>
+			<figure class="header__avatar">
+				<img src="{PortraitURL-128}" alt="{Title}">
+			</figure>
 		{/block:ShowAvatar}
+
 		{block:ShowTitle}
-		<h1 class="header__title">
-			<a href="{BlogURL}" title="{lang:Home}">{Title}</a>
-		</h1>
+			<h1 class="header__title">
+				<a href="{BlogURL}" title="{lang:Home}">
+					{Title}
+				</a>
+			</h1>
 		{/block:ShowTitle}
+
 		{block:ShowDescription}
-		<p class="header__description">
-			{Description}
-		</p>
+			<p class="header__description">
+				{Description}
+			</p>
 		{/block:ShowDescription}
 
 		{block:IfSocialIcons}
-		<ul class="social-links">
-			{block:IfUsernameOnDribbble}
-			<li><a class="social-links--dribbble" href="https://dribbble.com/{text:Username on Dribbble}">
-				<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 16,0C 7.178,0,0,7.178,0,16s 7.178,16, 16,16s 16-7.178, 16-16S 24.822,0, 16,0z M 16,2.354c 3.474,0, 6.646,1.302, 9.060,3.444 c-0.246,0.35-2.302,3.114-7.162,4.936c-2.24-4.114-4.722-7.494-5.1-8C 13.826,2.486, 14.898,2.354, 16,2.354z M 10.19,3.652 c 0.36,0.494, 2.802,3.878, 5.066,7.904C 8.864,13.254, 3.234,13.23, 2.622,13.222C 3.508,8.98, 6.366,5.456, 10.19,3.652z M 2.332,16.020 c0-0.14, 0.002-0.28, 0.006-0.418C 2.936,15.616, 9.56,15.7, 16.384,13.658c 0.392,0.766, 0.764,1.544, 1.108,2.32 c-0.18,0.050-0.36,0.104-0.538,0.162c-7.048,2.278-10.798,8.488-11.108,9.018C 3.664,22.736, 2.334,19.53, 2.332,16.020z M 15.998,29.686 c-3.158,0-6.070-1.078-8.388-2.884c 0.246-0.502, 3.014-5.848, 10.722-8.534c 0.030-0.010, 0.060-0.020, 0.090-0.030 c 1.92,4.986, 2.712,9.164, 2.916,10.364C 19.698,29.3, 17.894,29.688, 15.998,29.686z M 23.636,27.35c-0.14-0.832-0.866-4.832-2.654-9.744 c 4.282-0.686, 8.044,0.436, 8.512,0.584C 28.884,21.992, 26.702,25.276, 23.636,27.35z M 20.146,15.452 c-0.096-0.234-0.194-0.47-0.294-0.706C 19.568,14.080, 19.264,13.418, 18.946,12.766C 24,10.704, 26.29,7.768, 26.578,7.378 c 1.904,2.326, 3.056,5.288, 3.084,8.514C 29.212,15.796, 24.694,14.88, 20.146,15.452z"></path></g></svg>
-			</a></li>
-			{/block:IfUsernameOnDribbble}
-			{block:IfUsernameOnFacebook}
-			<li><a class="social-links--facebook" href="https://facebook.com/{text:Username on Facebook}">
-				<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-			</a></li>
-			{/block:IfUsernameOnFacebook}
-			{block:IfUsernameOnInstagram}
-			<li><a class="social-links--instagram" href="https://instagram.com/{text:Username on Instagram}">
-				<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 30.556,0L 1.444,0 C 0.648,0,0,0.646,0,1.442l0,29.116 C0,31.352, 0.648,32, 1.444,32l 29.112,0 C 31.352,32, 32,31.352, 32,30.558L 32,1.442 C 32,0.646, 31.352,0, 30.556,0z M 21.584,16c0,3.084-2.5,5.584-5.584,5.584S 10.416,19.084, 10.416,16 c0-3.084, 2.5-5.584, 5.584-5.584S 21.584,12.916, 21.584,16z M 28,28L 4,28 L 4,14 l 2.634,0 C 6.496,14.646, 6.416,15.314, 6.416,16 c0,5.284, 4.3,9.584, 9.584,9.584s 9.584-4.3, 9.584-9.584c0-0.686-0.080-1.354-0.218-2L 28,14 L 28,28 z M 28,10l-6,0 L 22,4 l 6,0 L 28,10 z"></path></g></svg>
-			</a></li>
-			{/block:IfUsernameOnInstagram}
-			{block:IfUsernameOnTwitter}
-			<li><a class="social-links--twitter" href="https://twitter.com/{text:Username on Twitter}">
-				<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-			</a></li>
-			{/block:IfUsernameOnTwitter}
-		</ul>
+			<ul class="social-links">
+				{block:IfUsernameOnDribbble}
+					<li>
+						<a class="social-links--dribbble" href="https://dribbble.com/{text:Username on Dribbble}">
+							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 16,0C 7.178,0,0,7.178,0,16s 7.178,16, 16,16s 16-7.178, 16-16S 24.822,0, 16,0z M 16,2.354c 3.474,0, 6.646,1.302, 9.060,3.444 c-0.246,0.35-2.302,3.114-7.162,4.936c-2.24-4.114-4.722-7.494-5.1-8C 13.826,2.486, 14.898,2.354, 16,2.354z M 10.19,3.652 c 0.36,0.494, 2.802,3.878, 5.066,7.904C 8.864,13.254, 3.234,13.23, 2.622,13.222C 3.508,8.98, 6.366,5.456, 10.19,3.652z M 2.332,16.020 c0-0.14, 0.002-0.28, 0.006-0.418C 2.936,15.616, 9.56,15.7, 16.384,13.658c 0.392,0.766, 0.764,1.544, 1.108,2.32 c-0.18,0.050-0.36,0.104-0.538,0.162c-7.048,2.278-10.798,8.488-11.108,9.018C 3.664,22.736, 2.334,19.53, 2.332,16.020z M 15.998,29.686 c-3.158,0-6.070-1.078-8.388-2.884c 0.246-0.502, 3.014-5.848, 10.722-8.534c 0.030-0.010, 0.060-0.020, 0.090-0.030 c 1.92,4.986, 2.712,9.164, 2.916,10.364C 19.698,29.3, 17.894,29.688, 15.998,29.686z M 23.636,27.35c-0.14-0.832-0.866-4.832-2.654-9.744 c 4.282-0.686, 8.044,0.436, 8.512,0.584C 28.884,21.992, 26.702,25.276, 23.636,27.35z M 20.146,15.452 c-0.096-0.234-0.194-0.47-0.294-0.706C 19.568,14.080, 19.264,13.418, 18.946,12.766C 24,10.704, 26.29,7.768, 26.578,7.378 c 1.904,2.326, 3.056,5.288, 3.084,8.514C 29.212,15.796, 24.694,14.88, 20.146,15.452z"></path></g></svg>
+						</a>
+					</li>
+				{/block:IfUsernameOnDribbble}
+				{block:IfUsernameOnFacebook}
+					<li>
+						<a class="social-links--facebook" href="https://facebook.com/{text:Username on Facebook}">
+							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
+						</a>
+					</li>
+				{/block:IfUsernameOnFacebook}
+				{block:IfUsernameOnInstagram}
+					<li>
+						<a class="social-links--instagram" href="https://instagram.com/{text:Username on Instagram}">
+							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 30.556,0L 1.444,0 C 0.648,0,0,0.646,0,1.442l0,29.116 C0,31.352, 0.648,32, 1.444,32l 29.112,0 C 31.352,32, 32,31.352, 32,30.558L 32,1.442 C 32,0.646, 31.352,0, 30.556,0z M 21.584,16c0,3.084-2.5,5.584-5.584,5.584S 10.416,19.084, 10.416,16 c0-3.084, 2.5-5.584, 5.584-5.584S 21.584,12.916, 21.584,16z M 28,28L 4,28 L 4,14 l 2.634,0 C 6.496,14.646, 6.416,15.314, 6.416,16 c0,5.284, 4.3,9.584, 9.584,9.584s 9.584-4.3, 9.584-9.584c0-0.686-0.080-1.354-0.218-2L 28,14 L 28,28 z M 28,10l-6,0 L 22,4 l 6,0 L 28,10 z"></path></g></svg>
+						</a>
+					</li>
+				{/block:IfUsernameOnInstagram}
+				{block:IfUsernameOnTwitter}
+					<li>
+						<a class="social-links--twitter" href="https://twitter.com/{text:Username on Twitter}">
+							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
+						</a>
+					</li>
+				{/block:IfUsernameOnTwitter}
+			</ul>
 		{/block:IfSocialIcons}
+
 	</header>
 
 	<main class="main container" role="main">
 
-		<article class="post post--text">
-			<div class="post__content">
-				<h1 class="post__title">
-					<a href="">How cool is the Galactic Empire?</a>
-				</h1>
-				<p>Donec ullamcorper nulla non metus auctor fringilla. Integer posuere erat a ante venenatis dapibus <a href="">posuere velit</a> aliquet. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-				<ul>
-					<li>Lorem ipsum dolor sit amet.</li>
-					<li>Voluptatem soluta suscipit voluptatibus velit.</li>
-					<li>Optio, porro, eius. Optio, labore.</li>
-					<li>Cum natus voluptatibus suscipit iure.</li>
-				</ul>
-				<h2>Lorem ipsum dolor sit</h2>
-				<p>Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-				<img src="https://tookapic.imgix.net/photos/2015/348/4/9/4915fab2c7d165778d1e5c5441bf0bfa.jpg?w=770&q=90&s=ff2a239267a3f33003967262e23d9095" alt="">
-				<p>Consectetur adipisicing elit. Quidem ducimus dolore aut optio, similique veniam voluptate suscipit maxime dolorum recusandae nostrum harum, culpa rerum.</p>
-				<blockquote>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam repudiandae eaque vitae saepe cum eum!</p>
-				</blockquote>
-				<p>Doloremque provident aliquam distinctio minima dicta repellendus dolores deleniti esse molestiae, animi laudantium ipsam blanditiis porro earum!</p>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
-					</div>
-				</div>
-			</footer>
-		</article>
+		{block:Posts}
+			<article class="post {block:IndexPage}indexpage{/block:IndexPage} {block:Permalink}permalink{/block:Permalink} post--{PostType} {TagsAsClasses}">
 
-		<article class="post post--photo">
-			<div class="photo">
-				<img src="https://tookapic.imgix.net/photos/2015/349/6/5/65800b548fc7561433435118e8e1484c.jpg?w=770&q=90&s=abd6dea655ed5192823ce7bd6a2674c3" alt="">
-			</div>
-			<div class="post__content">
-				<p>Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula porta felis euismod semper.</p>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
+				{block:Text}
+					<div class="post__content">
+						{block:Title}
+							<h1 class="post__title">
+								<a href="{Permalink}">
+									{Title}
+								</a>
+							</h1>
+						{/block:Title}
+						{Body}
+						{block:More}
+							<a class="post__read-more" href="{Permalink}">
+								{lang:Continue reading}
+							</a>
+						{/block:More}
 					</div>
-				</div>
-			</footer>
-		</article>
+				{/block:Text}
 
-		<article class="post post--link">
-			<div class="post__content">
-				<h1 class="post__title">
-					<a href="">
-						<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 17,2C 8.716,2, 2,8.716, 2,17S 8.716,32, 17,32S 32,25.284, 32,17S 25.284,2, 17,2z M 26,17 c0,0.002,0,0.002,0,0.004c0,0.13-0.026,0.258-0.076,0.378c-0.050,0.122-0.124,0.232-0.216,0.324l-6,6 c-0.39,0.39-1.024,0.39-1.414,0c-0.39-0.39-0.39-1.024,0-1.414L 22.586,18L 7,18 C 6.448,18, 6,17.552, 6,17C 6,16.448, 6.448,16, 7,16 l 15.586,0 L 18.292,11.708c-0.39-0.39-0.39-1.024,0-1.414c 0.39-0.39, 1.024-0.39, 1.414,0l 6,6c 0.092,0.092, 0.166,0.202, 0.216,0.324 C 25.974,16.74, 26,16.87, 26,17L 26,17z"></path></g></svg>
-						Sollicitudin Vestibulum
+				{block:Photo}
+					<figure class="photo">
+						{LinkOpenTag}
+							<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+						{LinkCloseTag}
+					</figure>
+					{block:Caption}
+						<div class="post__content">
+							{Caption}
+						</div>
+					{/block:Caption}
+				{/block:Photo}
+
+				{block:Panorama}
+					<figure class="photo">
+						{LinkOpenTag}
+							<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" width="{PhotoWidth-Panorama}" height="{PhotoHeight-Panorama}">
+						{LinkCloseTag}
+					</figure>
+					{block:Caption}
+						<div class="post__content">
+							{Caption}
+						</div>
+					{/block:Caption}
+				{/block:Panorama}
+
+				{block:Photoset}
+					<figure class="photo">
+						{Photoset}
+					</figure>
+					{block:Caption}
+						<div class="post__content">
+							{Caption}
+						</div>
+					{/block:Caption}
+				{/block:Photoset}
+
+				{block:Quote}
+					<div class="post__content">
+						<blockquote class="quote">
+							“{Quote}”
+							{block:Source}
+								<cite>&mdash; {Source}</cite>
+							{/block:Source}
+						</blockquote>
+					</div>
+				{/block:Quote}
+
+				{block:Link}
+					<div class="post__content">
+						<h1 class="post__title">
+							<a href="{URL}" {Target}>
+								<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 17,2C 8.716,2, 2,8.716, 2,17S 8.716,32, 17,32S 32,25.284, 32,17S 25.284,2, 17,2z M 26,17 c0,0.002,0,0.002,0,0.004c0,0.13-0.026,0.258-0.076,0.378c-0.050,0.122-0.124,0.232-0.216,0.324l-6,6 c-0.39,0.39-1.024,0.39-1.414,0c-0.39-0.39-0.39-1.024,0-1.414L 22.586,18L 7,18 C 6.448,18, 6,17.552, 6,17C 6,16.448, 6.448,16, 7,16 l 15.586,0 L 18.292,11.708c-0.39-0.39-0.39-1.024,0-1.414c 0.39-0.39, 1.024-0.39, 1.414,0l 6,6c 0.092,0.092, 0.166,0.202, 0.216,0.324 C 25.974,16.74, 26,16.87, 26,17L 26,17z"></path></g></svg>
+								{Name}
+							</a>
+						</h1>
+						{block:Description}
+							{Description}
+						{/block:Description}
+					</div>
+				{/block:Link}
+
+				{block:Video}
+					<div class="video-container">
+						{VideoEmbed-700}
+					</div>
+					{block:Caption}
+						<div class="post__content">
+							{Caption}
+						</div>
+					{/block:Caption}
+				{/block:Video}
+
+				{block:Chat}
+					<div class="post__content">
+						{block:Title}
+							<h1 class="post__title">
+								<a href="{Permalink}">
+									{Title}
+								</a>
+							</h1>
+						{/block:Title}
+						<ul class="chat">
+							{block:Lines}
+								<li>
+									{block:Label}
+										<span class="chat__label">
+											{Label}
+										</span>
+									{/block:Label}
+									{Line}
+								</li>
+							{/block:Lines}
+						</ul>
+					</div>
+				{/block:Chat}
+
+				{block:Audio}
+					<div class="post__content">
+						<div class="audioplayer">
+							{block:AudioEmbed}
+								{AudioEmbed color="#CCCDCE"}
+							{block:AudioEmbed}
+						</div>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					</div>
+				{/block:Audio}
+
+				{block:Answer}
+					{block:Title}
+						<h1 class="post__title">
+							<a href="{Permalink}">
+								{Title}
+							</a>
+						</h1>
+					{/block:Title}
+					<ul class="chat">
+						<li>
+							<span class="chat__label">
+								{Asker}:
+							</span>
+							{Question}
+						</li>
+					</ul>
+					<div class="post__content">
+						{Answer}
+					</div>
+				{/block:Answer}
+
+				<aside class="post__meta--aside">
+					<a class="post__meta__item" href="{Permalink}" title="{Month} {DayOfMonth}, {Year}">
+						{TimeAgo}
 					</a>
-				</h1>
-				<p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
+					{block:NoteCount}
+						<a class="post__meta__item" href="{Permalink}#notes">
+							{NoteCountWithLabel}
 						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
-					</div>
-				</div>
-			</footer>
-		</article>
+					{/block:NoteCount}
+				</aside>
 
-		<article class="post post--chat">
-			<div class="post__content">
-				<ul class="chat">
-					<li>
-						<span class="chat__label">Luke</span>
-						There's something not right here... I feel cold. Death.
-					</li>
-					<li>
-						<span class="chat__label">Yoda</span>
-						That place… is strong with the dark side of the Force. A domain of evil it is. In you must go.
-					</li>
-					<li>
-						<span class="chat__label">Luke</span>
-						What's in there?
-					</li>
-					<li>
-						<span class="chat__label">Yoda</span>
-						Only what you take with you.
-					</li>
-				</ul>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
+				<footer class="post__meta--footer">
+					<div class="post__meta__item">
+						{LikeButton color="#CCCDCE"}
 					</div>
-				</div>
-			</footer>
-		</article>
+					<a class="post__meta__item" href="">
+						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
+					</a>
+					<a class="post__meta__item" href="{Permalink}#comment">
+						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
+					</a>
+					<div class="post__meta__item">
+						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
+						<div class="share">
+							<a href="http://facebook.com/" title="Share it">
+								<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
+							</a>
+							<a href="http://twitter.com/" title="Tweet it">
+								<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
+							</a>
+							<a href="http://pinterest.com/" title="Pin it">
+								<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
+							</a>
+						</div>
+					</div>
+				</footer>
 
-		<article class="post post--quote">
-			<div class="post__content">
-				<blockquote class="quote">
-					“Luke, you can destroy the Emperor. He has foreseen this. It is your destiny. Join me, and together we can rule the galaxy as father and son.”
-					<cite>— Darth Vader</cite>
-				</blockquote>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
-					</div>
-				</div>
-			</footer>
-		</article>
+			</article>
+		{/block:Posts}
 
-		<article class="post post--video">
-			<div class="video-container">
-				<iframe width="1280" height="720" src="https://www.youtube.com/embed/13RBoc__53U?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-			</div>
-			<div class="post__content">
-				<p>Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas sed diam eget risus varius blandit sit amet non magna. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur.</p>
-			</div>
-			<aside class="post__meta--aside">
-				<a class="post__meta__item" href="">2 weeks ago</a>
-				<a class="post__meta__item" href="">43 notes</a>
-			</aside>
-			<footer class="post__meta--footer">
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
-				</a>
-				<a class="post__meta__item" href="">
-					<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-				</a>
-				<div class="post__meta__item">
-					<svg width="32.00199890136719" height="32" viewBox="0 0 32.00199890136719 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
-					<div class="share">
-						<a href="http://facebook.com/" title="Share it">
-							<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#3B5998"><g><path d="M 12.054,32l 5.996,0 l 0.004-16l 5.446-0.002l 0.584-5.514L 18.050,10.484 l 0.008-2.76c0-1.438, 0.098-2.208, 2.162-2.208l 3.812,0 L 24.032,0 L 18.566,0 C 13.268,0, 12.048,2.738, 12.048,7.236l 0.006,3.248L 8.032,10.486L 8.032,16 l 4.022,0 L 12.054,32 z"></path></g></svg>
-						</a>
-						<a href="http://twitter.com/" title="Tweet it">
-							<svg width="32.003997802734375" height="32" viewBox="0 0 32.003997802734375 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#4099FF"><g><path d="M 31.118,3.48c-1.268,0.752-2.674,1.298-4.17,1.594C 25.75,3.796, 24.044,3, 22.156,3 c-3.626,0-6.566,2.94-6.566,6.564c0,0.514, 0.058,1.016, 0.17,1.496c-5.456-0.274-10.294-2.888-13.532-6.86 C 1.662,5.168, 1.34,6.296, 1.34,7.5c0,2.278, 1.16,4.288, 2.92,5.464C 3.184,12.928, 2.172,12.632, 1.286,12.14c0,0.028,0,0.054,0,0.082 c0,3.18, 2.264,5.834, 5.266,6.438C 6.002,18.81, 5.422,18.89, 4.822,18.89c-0.424,0-0.834-0.042-1.236-0.118 c 0.836,2.608, 3.26,4.506, 6.132,4.56c-2.246,1.76-5.078,2.81-8.154,2.81c-0.53,0-1.052-0.032-1.566-0.092 C 2.904,27.912, 6.354,29, 10.062,29c 12.076,0, 18.68-10.004, 18.68-18.68c0-0.284-0.006-0.568-0.020-0.85 c 1.286-0.922, 2.4-2.078, 3.28-3.394c-1.178,0.522-2.442,0.876-3.77,1.034C 29.588,6.298, 30.628,5.010, 31.118,3.48z"></path></g></svg>
-						</a>
-						<a href="http://pinterest.com/" title="Pin it">
-							<svg width="32" height="32.64600372314453" viewBox="0 0 32 32.64600372314453" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#CB2027"><g><path d="M 8.060,18.506c 1.546-2.734-0.498-3.334-0.818-5.316c-1.31-8.1, 9.344-13.632, 14.924-7.972 c 3.86,3.92, 1.318,15.972-4.906,14.72C 11.298,18.74, 20.18,9.146, 15.422,7.264C 11.554,5.732, 9.5,11.944, 11.334,15.032 C 10.258,20.342, 7.942,25.342, 8.88,32c 3.040-2.206, 4.066-6.432, 4.906-10.838c 1.528,0.93, 2.346,1.896, 4.294,2.046 c 7.186,0.558, 11.202-7.174, 10.218-14.31c-0.872-6.324-7.178-9.544-13.902-8.79c-5.316,0.596-10.616,4.894-10.836,11.040 C 3.426,14.9, 4.49,17.716, 8.060,18.506z"></path></g></svg>
-						</a>
-					</div>
-				</div>
-			</footer>
 		</article>
 
 	</main>
