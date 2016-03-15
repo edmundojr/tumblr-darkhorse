@@ -17,8 +17,11 @@
 	<meta name="text:Disqus Shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
 
-	<meta name="if:Social Avatar" content="0">
-	<meta name="if:Social Icons" content="1">
+	<meta name="if:Show Title" content="1">
+	<meta name="if:Show Avatar" content="0">
+	<meta name="if:Show Description" content="1">
+	<meta name="if:Show Social Icons" content="1">
+
 	<meta name="text:Username on Dribbble" content="">
 	<meta name="text:Username on Facebook" content="">
 	<meta name="text:Username on Instagram" content="">
@@ -59,7 +62,7 @@
 			</p>
 		{/block:ShowDescription}
 
-		{block:IfSocialIcons}
+		{block:ShowSocialIcons}
 			<ul class="social-links">
 				{block:IfUsernameOnDribbble}
 					<li>
@@ -90,7 +93,7 @@
 					</li>
 				{/block:IfUsernameOnTwitter}
 			</ul>
-		{/block:IfSocialIcons}
+		{/block:ShowSocialIcons}
 
 	</header>
 
