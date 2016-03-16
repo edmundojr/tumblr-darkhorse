@@ -11,11 +11,23 @@
 	&__title {
 		font-size: 1.6em;
 		color: $accent-color;
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
 	}
 
 	&__description {
 		font-size: 0.9em;
 		line-height: 1.5em;
+	}
+
+	&__avatar img {
+		background: rgba(255,255,255,.03);
+		border: 3px solid rgba(255,255,255,.03);
+		border-radius: 50%;
+		box-shadow: 0 50px 80px 0 rgba(0,0,0,.2);
 	}
 }
 
