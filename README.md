@@ -4,4 +4,4 @@ The Tumblr theme Darth Vader would use if he had a Tumblr. Or was still alive. O
 
 ## Credits
 
-Star field background based on a (CodePen)[http://codepen.io/neilzo/pen/ZGVWzp] by Neil Daftary.
+Star field background based on a [CodePen](http://codepen.io/neilzo/pen/ZGVWzp) by Neil Daftary.
