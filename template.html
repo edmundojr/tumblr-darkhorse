@@ -34,7 +34,7 @@
 
 	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fira+Sans:400,400italic,700,700italic">
 
-	<link rel="stylesheet" href="//raw.githubusercontent.com/edmundojr/tumblr-darkhorse/master/dist/css/main.css">
+	<link rel="stylesheet" href="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/css/main.css">
 
 	<style>
 	{CustomCSS}
@@ -46,27 +46,27 @@
 
 	<header class="header container" role="banner">
 
-		{block:ShowAvatar}
+		{block:IfShowAvatar}
 			<figure class="header__avatar">
 				<img src="{PortraitURL-128}" alt="{Title}">
 			</figure>
-		{/block:ShowAvatar}
+		{/block:IfShowAvatar}
 
-		{block:ShowTitle}
+		{block:IfShowTitle}
 			<h1 class="header__title">
 				<a href="{BlogURL}" title="{lang:Home}">
 					{Title}
 				</a>
 			</h1>
-		{/block:ShowTitle}
+		{/block:IfShowTitle}
 
-		{block:ShowDescription}
+		{block:IfShowDescription}
 			<p class="header__description">
 				{Description}
 			</p>
-		{/block:ShowDescription}
+		{/block:IfShowDescription}
 
-		{block:ShowSocialIcons}
+		{block:IfShowSocialIcons}
 			<ul class="social-links">
 				{block:IfUsernameOnDribbble}
 					<li>
@@ -97,7 +97,7 @@
 					</li>
 				{/block:IfUsernameOnTwitter}
 			</ul>
-		{/block:ShowSocialIcons}
+		{/block:IfShowSocialIcons}
 
 	</header>
 
@@ -268,7 +268,7 @@
 
 				<footer class="post__meta--footer">
 					<div class="post__meta__item">
-						{LikeButton color="#CCCDCE"}
+						{LikeButton color="white"}
 					</div>
 					<a class="post__meta__item" href="">
 						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 31.984,13.834C 31.9,8.926, 27.918,4.552, 23,4.552c-2.844,0-5.35,1.488-7,3.672 C 14.35,6.040, 11.844,4.552, 9,4.552c-4.918,0-8.9,4.374-8.984,9.282L0,13.834 c0,0.030, 0.006,0.058, 0.006,0.088 C 0.006,13.944,0,13.966,0,13.99c0,0.138, 0.034,0.242, 0.040,0.374C 0.48,26.872, 15.874,32, 15.874,32s 15.62-5.122, 16.082-17.616 C 31.964,14.244, 32,14.134, 32,13.99c0-0.024-0.006-0.046-0.006-0.068C 31.994,13.89, 32,13.864, 32,13.834L 31.984,13.834 z"></path></g></svg>
@@ -304,7 +304,7 @@
 	</footer>
 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
-	<script src="//raw.githubusercontent.com/edmundojr/tumblr-darkhorse/master/dist/js/starfield.js"></script>
+	<script src="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/js/starfield.js"></script>
 
 </body>
 </html>
