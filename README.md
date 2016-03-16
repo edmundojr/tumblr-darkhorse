@@ -1,7 +1,7 @@
-# Bones
+# Dark Horse
 
-Bare-bones front-end boilerplate using Gulp, sass and Browsersync.
+The Tumblr theme Darth Vader would use if he had a Tumblr. Or was still alive. Or was not a work of fiction.
 
-## Why Bones?
+## Credits
 
-Because I like Star Trek (TOS).
+Star field background based on a (CodePen)[http://codepen.io/neilzo/pen/ZGVWzp] by Neil Daftary.
