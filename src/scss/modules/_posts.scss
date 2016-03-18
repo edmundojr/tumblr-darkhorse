@@ -17,10 +17,27 @@
 	&__content {
 		padding: ($gutter/2.5) $gutter ($gutter/1.5);
 
+		// Images
+
 		img {
 			width: calc(100% + #{$gutter*2.32});
 			max-width: none;
 			margin: 1em (-$gutter*1.16);
+		}
+
+		// Links
+
+		a {
+			text-decoration: none;
+			color: darken($iron, 30%);
+			border-bottom: 1px solid darken($iron, 65%);
+			transition: color $duration, border $duration;
+
+			&:hover,
+			&:focus {
+				color: $accent-color;
+				border-bottom: 1px solid darken($iron, 55%);
+			}
 		}
 	}
 
@@ -35,6 +52,7 @@
 			display: inline-block;
 			text-decoration: none;
 			color: inherit;
+			border: none;
 			transition: color $duration;
 
 			&:hover,
