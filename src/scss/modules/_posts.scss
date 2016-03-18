@@ -39,7 +39,7 @@
 			&:hover,
 			&:focus {
 				color: $accent-color;
-				border-bottom: 1px solid darken($iron, 55%);
+				border-color: darken($iron, 55%);
 			}
 		}
 	}
