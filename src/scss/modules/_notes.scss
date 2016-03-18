@@ -1,0 +1,39 @@
+//
+// Modules: notes
+// ----------------------------------------------------------------------------
+
+.notes {
+	padding: $gutter;
+	margin: 10% 0 0;
+	list-style: none;
+	font-size: 0.8em;
+	background: rgba(255,255,255,.01);
+	border: 1px solid rgba(255,255,255,.01);
+	border-top: none;
+	box-shadow: 0 50px 80px 0 rgba(0,0,0,.1);
+
+	.note + .note {
+		padding-top: 1em;
+	}
+
+	.avatar_frame {
+		max-width: 32px;
+	}
+
+	.action {
+		padding-left: .75em;
+
+		a {
+			text-decoration: none;
+			color: darken($iron, 30%);
+			border-bottom: 1px solid darken($iron, 65%);
+			transition: color $duration, border $duration;
+
+			&:hover,
+			&:focus {
+				color: $accent-color;
+				border-bottom: 1px solid darken($iron, 55%);
+			}
+		}
+	}
+}

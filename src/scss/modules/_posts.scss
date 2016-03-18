@@ -5,10 +5,13 @@
 .post {
 	position: relative;
 	min-height: 300px;
-	margin-bottom: 20%;
 	background: rgba(255,255,255,.03);
 	border: 1px solid rgba(255,255,255,.03);
 	box-shadow: 0 50px 80px 0 rgba(0,0,0,.2);
+
+	& + & {
+		margin-bottom: 20%;
+	}
 
 
 	// Content

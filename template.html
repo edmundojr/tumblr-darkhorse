@@ -270,9 +270,11 @@
 					<div class="post__meta__item">
 						{LikeButton color="CCCDCE"}
 					</div>
-					<a class="post__meta__item" href="{Permalink}#comment">
-						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
-					</a>
+					{block:IfDisqusShortname}
+						<a class="post__meta__item" href="{Permalink}#disqus_thread">
+							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
+						</a>
+					{/block:IfDisqusShortname}
 					<div class="post__meta__item">
 						<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 23.586,9.444c 0.88,0.666, 1.972,1.064, 3.16,1.064C 29.648,10.508, 32,8.156, 32,5.254 C 32,2.352, 29.648,0, 26.746,0c-2.9,0-5.254,2.352-5.254,5.254c0,0.002,0,0.004,0,0.004L 8.524,11.528 C 7.626,10.812, 6.49,10.38, 5.254,10.38C 2.352,10.38,0,12.734,0,15.634s 2.352,5.254, 5.254,5.254c 1.048,0, 2.024-0.312, 2.844-0.84 l 13.396,6.476c0,0.002,0,0.004,0,0.004c0,2.902, 2.352,5.254, 5.254,5.254c 2.902,0, 5.254-2.352, 5.254-5.254 c0-2.902-2.352-5.254-5.254-5.254c-1.188,0-2.28,0.398-3.16,1.064L 10.488,16.006c 0.006-0.080, 0.010-0.158, 0.012-0.238L 23.586,9.444z"></path></g></svg>
 						<div class="share">
@@ -290,9 +292,27 @@
 				</footer>
 
 			</article>
-		{/block:Posts}
 
-		</article>
+			{block:PermalinkPage}
+				{block:IfDisqusShortname}
+					<div class="comments" id="disqus_thread"></div>
+					<script type="text/javascript">
+					var disqus_shortname = '{text:Disqus Shortname}';
+					var disqus_url = '{Permalink}';
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+					</script>
+				{/block:IfDisqusShortname}
+				{block:PostNotes}
+					<footer id="notes" class="{block:IfNotDisqusShortname}no-disqus{/block:IfNotDisqusShortname}">
+						{PostNotes-64}
+					</footer>
+				{/block:PostNotes}
+			{/block:PermalinkPage}
+		{/block:Posts}
 
 	</main>
 
