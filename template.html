@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>{Title} {block:SearchPage}({lang:Search results for SearchQuery}){/block:SearchPage} {block:PermalinkPage}{block:PostSummary} ‹ {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+	<title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}) {/block:SearchPage}{block:PermalinkPage}{block:PostSummary} ‹ {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 	<meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:PermalinkPage}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:PermalinkPage}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
 	<meta name="text:Disqus Shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
 
-	<meta name="if:Disable Stars Background" content="0">
+	<meta name="if:Show Stars Background" content="1">
 	<meta name="if:Show Avatar" content="0">
 	<meta name="if:Show Title" content="1">
 	<meta name="if:Show Description" content="1">
@@ -393,10 +393,10 @@
 		<a href="http://darkhorse-theme.tumblr.com">Dark Horse Theme</a> by <a href="http://edmundojr.com" target="_blank">Edmundo Santos</a>
 	</footer>
 
-	{block:IfDisableStarsBackground}
+	{block:IfShowStarsBackground}
 		<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
 		<script src="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/js/starfield.js"></script>
-	{/block:IfDisableStarsBackground}
+	{/block:IfShowStarsBackground}
 
 </body>
 </html>
