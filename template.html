@@ -398,5 +398,16 @@
 		<script src="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/js/starfield.js"></script>
 	{/block:IfShowStarsBackground}
 
+	{block:IfGoogleAnalyticsID}
+	<script>
+	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+	function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+	e.src='//www.google-analytics.com/analytics.js';
+	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+	ga('create','{text:Google Analytics ID}');ga('send','pageview');
+	</script>
+	{/block:IfGoogleAnalyticsID}
+
 </body>
 </html>
