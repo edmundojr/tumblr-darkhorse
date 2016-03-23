@@ -1,0 +1,77 @@
+//
+// Module: navigation
+// ----------------------------------------------------------------------------
+
+.nav {
+	position: fixed;
+	top: 2em;
+	left: 2em;
+	z-index: 10;
+	font-size: .8em;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.875;
+	text-align: left;
+	text-transform: uppercase;
+
+	// Links
+
+	&__item {
+		display: block;
+		padding: 0 1em 0 2em;
+		text-decoration: none;
+		color: $iron;
+		transition: color $duration;
+
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+
+		// Toggle
+
+		&--toggle {
+			position: relative;
+
+			&:before {
+				position: absolute;
+				top: 13px;
+				left: 0;
+				width: 18px;
+				height: 2px;
+				background: $iron;
+				box-shadow: 0 7px 0 $iron, 0 -7px 0 $iron;
+				border-radius: 2px;
+				transition: background $duration, box-shadow $duration;
+				content: "";
+			}
+
+			&:hover:before,
+			&:focus:before {
+				background: $accent-color;
+				box-shadow: 0 7px 0 $accent-color, 0 -7px 0 $accent-color;
+			}
+		}
+
+		// Search
+
+		&--search {
+			margin-left: -.25em;
+
+			input {
+				max-width: 120px;
+				padding: 0 .25em;
+				background: rgba(255,255,255,.03);
+				border: none;
+				border-radius: 3px;
+				transition: background $duration;
+
+				&:hover,
+				&:focus {
+					background: rgba(255,255,255,.06);
+					outline: none;
+				}
+			}
+		}
+	}
+}
