@@ -3,7 +3,7 @@
 // ----------------------------------------------------------------------------
 
 body {
-	font: 1.25em/1.5em $font-text;
+	font: 1.25em/1.5 $font-text;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $iron;
@@ -96,7 +96,6 @@ h4 {
 	margin-left: 0;
 	font-size: 1.3em;
 	font-style: italic;
-	line-height: 1.4em;
 
 	cite {
 		display: block;
