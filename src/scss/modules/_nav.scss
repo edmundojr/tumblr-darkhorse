@@ -17,60 +17,78 @@
 	// Links
 
 	&__item {
+		position: relative;
 		display: block;
 		padding: 0 1em 0 2em;
 		text-decoration: none;
 		color: $iron;
-		transition: color $duration;
+		transition: color $duration, opacity $duration, visibility $duration, transform $duration $easeOutBack;
+		opacity: 0;
+		visibility: hidden;
+
+		// Add delay to each item
+		@for $i from 1 to 10 {
+			&:nth-child(#{$i}) {
+				transform: translateY($i * -10px);
+				transition-delay: $i * 0.06s;
+			}
+		}
 
 		&:hover,
 		&:focus {
 			color: $accent-color;
 		}
 
-		// Toggle
+		// Toggle icon
 
 		&--toggle {
-			position: relative;
+			visibility: visible;
+			transform: none !important;
+			opacity: 1;
 
-			&:before {
+			&:hover + #nav .nav__item {
+				visibility: visible;
+				opacity: 1;
+				transform: none;
+			}
+
+			// Spaceship icon
+
+			&::before {
 				position: absolute;
-				top: 13px;
+				top: 50%;
 				left: 0;
 				width: 18px;
 				height: 2px;
+				margin-top: -2px;
 				background: $iron;
-				box-shadow: 0 7px 0 $iron, 0 -7px 0 $iron;
-				border-radius: 2px;
-				transition: background $duration, box-shadow $duration;
+				box-shadow: 3px 6px 0 $iron, 3px -6px 0 $iron;
+				transition: background $duration, box-shadow $duration, transform $duration;
 				content: "";
 			}
 
-			&:hover:before,
-			&:focus:before {
+			&:hover::before,
+			&:focus::before {
 				background: $accent-color;
-				box-shadow: 0 7px 0 $accent-color, 0 -7px 0 $accent-color;
+				box-shadow: -4px 7px 0 $accent-color, -4px -7px 0 $accent-color;
+				transform: translateX(4px);
 			}
 		}
 
 		// Search
 
 		&--search {
-			margin-left: -.25em;
+			max-width: 120px;
+			padding: .25em;
+			margin-left: 1.75em;
+			background: rgba(255,255,255,.03);
+			border: none;
+			border-radius: 3px;
 
-			input {
-				max-width: 120px;
-				padding: 0 .25em;
-				background: rgba(255,255,255,.03);
-				border: none;
-				border-radius: 3px;
-				transition: background $duration;
-
-				&:hover,
-				&:focus {
-					background: rgba(255,255,255,.06);
-					outline: none;
-				}
+			&:hover,
+			&:focus {
+				background: rgba(255,255,255,.06);
+				outline: none;
 			}
 		}
 	}
