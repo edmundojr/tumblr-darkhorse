@@ -19,8 +19,11 @@
 	<meta name="if:Show Avatar" content="0">
 	<meta name="if:Show Title" content="1">
 	<meta name="if:Show Description" content="1">
-	<meta name="if:Show Archive" content="0">
-	<meta name="if:Show RSS" content="0">
+
+	<meta name="if:Show Archive" content="1">
+	<meta name="if:Show Random" content="1">
+	<meta name="if:Show RSS" content="1">
+	<meta name="if:Show Search" content="1">
 
 	<meta name="if:Show Social Icons" content="1">
 	<meta name="text:Username on Dribbble" content="">
@@ -74,15 +77,51 @@
 			</p>
 		{/block:IfShowDescription}
 
+		<nav class="nav" role="navigation">
+			<a class="nav__item nav__item--toggle" href="#nav">Menu</a>
+			<div id="nav">
+				{block:HasPages}
+					{block:Pages}
+						<a class="nav__item" href="{URL}">
+							{Label}
+						</a>
+					{/block:Pages}
+				{/block:HasPages}
+				{block:IfShowArchive}
+					<a class="nav__item" href="/archive" title="{lang:Browse the archive}">
+						{lang:Archive}
+					</a>
+				{/block:IfShowArchive}
+				{block:AskEnabled}
+					<a class="nav__item" href="/ask">
+						{AskLabel}
+					</a>
+				{/block:AskEnabled}
+				{block:IfShowRandom}
+					<a class="nav__item" href="/random">
+						{lang:Random}
+					</a>
+				{/block:IfShowRandom}
+				{block:SubmissionsEnabled}
+					<a class="nav__item" href="/submit">
+						{SubmitLabel}
+					</a>
+				{/block:SubmissionsEnabled}
+				{block:IfShowRSS}
+					<a class="nav__item" href="{RSS}" title="{lang:Subscribe via RSS}">
+						{lang:RSS}
+					</a>
+				{/block:IfShowRSS}
+				{block:IfShowSearch}
+					<form class="nav__item nav__item--search" action="/search" method="get">
+						<input type="text" name="q" value="{SearchQuery}" placeholder="SEARCH">
+					</form>
+				{/block:IfShowSearch}
+			</div>
+		</nav>
+
 		{block:IfShowSocialIcons}
 			<ul class="social-links">
-				{block:IfShowArchive}
-					<li>
-						<a href="/archive">
-							<svg width="32" height="32" viewBox="0 0 32 32"><g><title>Archive</title><path d="M 30,4L 2,4 C 0.896,4,0,4.896,0,6l0,4 l 32,0 L 32,6 C 32,4.896, 31.104,4, 30,4zM 2,30c0,1.104, 0.896,2, 2,2l 24,0 c 1.104,0, 2-0.896, 2-2L 30,12 L 2,12 L 2,30 z M 12,16l 8,0 c 1.104,0, 2,0.896, 2,2c0,1.104-0.896,2-2,2 L 12,20 c-1.104,0-2-0.896-2-2C 10,16.896, 10.896,16, 12,16z"></path></g></svg>
-						</a>
-					</li>
-				{/block:IfShowArchive}
 				{block:IfUsernameOnDribbble}
 					<li>
 						<a class="social-links--dribbble" href="https://dribbble.com/{text:Username on Dribbble}">
@@ -160,13 +199,6 @@
 						</a>
 					</li>
 				{/block:IfUsernameOnYouTube}
-				{block:IfShowRSS}
-					<li>
-						<a href="/rss">
-							<svg width="32" height="32" viewBox="0 0 32 32"><g><title>Feed RSS</title><path d="M 0.012,0l0,6.136 C 14.256,6.136, 25.848,17.74, 25.848,32L 32,32 C 32,14.36, 17.648,0, 0.012,0zM 14.964,32l 6.16,0 c 0.002-11.652-9.476-21.13-21.12-21.13l0,6.134 c 3.994,0, 7.748,1.562, 10.576,4.392 C 13.404,24.218, 14.964,27.99, 14.964,32zM 4.26,31.96c 2.358,0, 4.266-1.896, 4.266-4.244c-0.002-2.334-1.908-4.252-4.266-4.252 C 1.91,23.464,0,25.38,0,27.716C0,30.064, 1.91,31.96, 4.26,31.96z"></path></g></svg>
-						</a>
-					</li>
-				{/block:IfShowRSS}
 			</ul>
 		{/block:IfShowSocialIcons}
 
@@ -395,6 +427,7 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
 		<script src="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/js/starfield.js"></script>
 	{/block:IfShowStarsBackground}
+	<script src="//rawgit.com/edmundojr/tumblr-darkhorse/master/dist/js/nav.js"></script>
 
 	{block:IfGoogleAnalyticsID}
 	<script>
