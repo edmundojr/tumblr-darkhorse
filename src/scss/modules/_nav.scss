@@ -71,13 +71,14 @@
 
 		// Search
 
-		&--search {
+		&--search input {
 			max-width: 120px;
 			padding: .25em;
-			margin-left: 1.75em;
+			margin-left: -.25em;
 			background: rgba(255,255,255,.03);
 			border: none;
 			border-radius: 3px;
+			transition: background $duration;
 
 			&:hover,
 			&:focus {
