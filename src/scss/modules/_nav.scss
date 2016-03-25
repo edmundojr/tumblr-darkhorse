@@ -4,9 +4,10 @@
 
 .nav {
 	position: fixed;
-	top: 2em;
-	left: 2em;
+	top: 0;
+	left: 0;
 	z-index: 10;
+	padding: 2em 2em 0;
 	font-size: .8em;
 	font-style: normal;
 	font-weight: bold;
@@ -14,7 +15,7 @@
 	text-align: left;
 	text-transform: uppercase;
 
-	// Links
+	// Items
 
 	&__item {
 		position: relative;
@@ -43,14 +44,8 @@
 
 		&--toggle {
 			visibility: visible;
-			transform: none !important;
 			opacity: 1;
-
-			&:hover + #nav .nav__item {
-				visibility: visible;
-				opacity: 1;
-				transform: none;
-			}
+			transform: none !important;
 
 			// Spaceship icon
 
@@ -70,8 +65,7 @@
 			&:hover::before,
 			&:focus::before {
 				background: $accent-color;
-				box-shadow: -4px 7px 0 $accent-color, -4px -7px 0 $accent-color;
-				transform: translateX(4px);
+				box-shadow: 3px 6px 0 $accent-color, 3px -6px 0 $accent-color;
 			}
 		}
 
@@ -89,6 +83,26 @@
 			&:focus {
 				background: rgba(255,255,255,.06);
 				outline: none;
+			}
+		}
+	}
+
+	// Nav open
+
+	&--open {
+		.nav__item {
+			visibility: visible;
+			opacity: 1;
+			transform: none;
+
+			&--toggle {
+				color: $accent-color;
+
+				&::before {
+					background: $accent-color;
+					box-shadow: -4px 7px 0 $accent-color, -4px -7px 0 $accent-color;
+					transform: translateX(4px);
+				}
 			}
 		}
 	}

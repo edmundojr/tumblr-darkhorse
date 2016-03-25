@@ -1,0 +1,1 @@
+!function(){function e(){n.classList.contains(c)?n.classList.remove(c):n.classList.add(c)}var n=document.querySelector(".nav"),t=document.querySelector(".nav__item--toggle"),c="nav--open";t.addEventListener("click",function(n){n.preventDefault(),e()})}();
