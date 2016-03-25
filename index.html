@@ -21,10 +21,13 @@
 			<a class="nav__item nav__item--toggle" href="#nav">Menu</a>
 			<div id="nav">
 				<a class="nav__item" href="/about">About</a>
-				<a class="nav__item" href="/random">Random</a>
 				<a class="nav__item" href="/archive">Archive</a>
+				<a class="nav__item" href="/random">Random</a>
 				<a class="nav__item" href="/ask">Ask</a>
-				<input class="nav__item nav__item--search" type="search" placeholder="SEARCH">
+				<a class="nav__item" href="/rss">RSS</a>
+				<form class="nav__item nav__item--search" action="/search" method="get">
+					<input type="text" name="q" placeholder="SEARCH">
+				</form>
 			</div>
 		</nav>
 		<ul class="social-links">
