@@ -1,0 +1,55 @@
+//
+// Module: pagination
+// ----------------------------------------------------------------------------
+
+.pagination {
+	margin-top: 20%;
+	padding: ($gutter/2.5) $gutter ($gutter/1.5);
+	font-size: .9em;
+	font-weight: bold;
+	letter-spacing: .025em;
+	text-align: center;
+	text-transform: uppercase;
+
+	// Link
+
+	&__link {
+		display: inline-block;
+		padding: .5em 1.5em;
+		text-decoration: none;
+		color: $iron;
+		transition: color $duration;
+
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+
+		&--prev {
+			padding-left: .5em;
+
+			&:hover svg,
+			&:focus svg {
+				transform: translateX(-7px);
+			}
+		}
+
+		&--next {
+			padding-right: .5em;
+
+			&:hover svg,
+			&:focus svg {
+				transform: translateX(7px);
+			}
+		}
+	}
+
+	// Arrow icon
+
+	&__arrow {
+		display: inline-block;
+		margin-top: -5px;
+		fill: currentColor;
+		transition: transform $duration $easeOutBack;
+	}
+}

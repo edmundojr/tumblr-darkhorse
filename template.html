@@ -22,7 +22,7 @@
 
 	<meta name="if:Show Archive" content="1">
 	<meta name="if:Show Random" content="1">
-	<meta name="if:Show RSS" content="1">
+	<meta name="if:Show RSS feed" content="1">
 	<meta name="if:Show Search" content="1">
 
 	<meta name="if:Show Social Icons" content="1">
@@ -109,12 +109,12 @@
 				{/block:SubmissionsEnabled}
 				{block:IfShowRSS}
 					<a class="nav__item" href="{RSS}" title="{lang:Subscribe via RSS}">
-						{lang:RSS}
+						{lang:RSS feed}
 					</a>
 				{/block:IfShowRSS}
 				{block:IfShowSearch}
 					<form class="nav__item nav__item--search" action="/search" method="get">
-						<input type="text" name="q" value="{SearchQuery}" placeholder="SEARCH">
+						<input type="text" name="q" value="{SearchQuery}" placeholder="{lang:Search}">
 					</form>
 				{/block:IfShowSearch}
 			</div>
@@ -207,7 +207,7 @@
 	<main class="main container" role="main">
 
 		{block:Posts}
-			<article class="post {block:IndexPage}indexpage{/block:IndexPage} {block:Permalink}permalink{/block:Permalink} post--{PostType} {TagsAsClasses}">
+			<article class="post post--{PostType} {block:Quote}post--quote--{Length}{/block:Quote}">
 
 				{block:Text}
 					<div class="post__content">
@@ -359,11 +359,11 @@
 				{/block:Answer}
 
 				<aside class="post__meta--aside">
-					<a class="post__meta__item" href="{Permalink}" title="{Month} {DayOfMonth}, {Year}">
+					<a class="post__meta__item" href="{Permalink}" title="{lang:Posted on Month DayOfMonth Year}">
 						{TimeAgo}
 					</a>
 					{block:NoteCount}
-						<a class="post__meta__item" href="{Permalink}#notes">
+						<a class="post__meta__item" href="{Permalink}#notes" title="{lang:This post has NoteCount notes}">
 							{NoteCountWithLabel}
 						</a>
 					{/block:NoteCount}
@@ -374,7 +374,7 @@
 						{LikeButton color="CCCDCE"}
 					</div>
 					{block:IfDisqusShortname}
-						<a class="post__meta__item" href="{Permalink}#disqus_thread">
+						<a class="post__meta__item" href="{Permalink}#disqus_thread" title="{lang:View comments}">
 							<svg width="32" height="32" viewBox="0 0 32 32"><g><path d="M 5.078,24.482C 4.492,25.996, 3.498,27.976, 1.812,30c 3.198,0, 7.312-0.42, 10.482-2.364 C 13.486,27.866, 14.722,28, 16,28c 8.836,0, 16-5.82, 16-13S 24.836,2, 16,2S0,7.82,0,15C0,18.744, 1.96,22.11, 5.078,24.482z"></path></g></svg>
 						</a>
 					{/block:IfDisqusShortname}
@@ -416,6 +416,23 @@
 				{/block:PostNotes}
 			{/block:PermalinkPage}
 		{/block:Posts}
+
+		{block:Pagination}
+			<div class="pagination">
+				{block:PreviousPage}
+					<a class="pagination__link pagination__link--prev" href="{PreviousPage}">
+						<svg class="pagination__arrow" width="32" height="32" viewBox="0 0 32 32"><g><title>Arrow left</title><path d="M 12.3,17.71l 6.486,6.486c 0.39,0.39, 1.024,0.39, 1.414,0c 0.39-0.39, 0.39-1.024,0-1.414L 14.418,17 L 20.2,11.218c 0.39-0.39, 0.39-1.024,0-1.414c-0.39-0.39-1.024-0.39-1.414,0L 12.3,16.29C 12.104,16.486, 12.008,16.742, 12.008,17 C 12.008,17.258, 12.104,17.514, 12.3,17.71z"></path></g></svg>
+						{lang:Prev}
+					</a>
+				{/block:PreviousPage}
+				{block:NextPage}
+					<a class="pagination__link pagination__link--next" href="{NextPage}">
+						{lang:Next}
+						<svg class="pagination__arrow" width="32" height="32" viewBox="0 0 32 32"><g><title>Arrow right</title><path d="M 13.8,24.196c 0.39,0.39, 1.024,0.39, 1.414,0l 6.486-6.486c 0.196-0.196, 0.294-0.454, 0.292-0.71 c0-0.258-0.096-0.514-0.292-0.71L 15.214,9.804c-0.39-0.39-1.024-0.39-1.414,0c-0.39,0.39-0.39,1.024,0,1.414L 19.582,17 L 13.8,22.782C 13.41,23.172, 13.41,23.806, 13.8,24.196z"></path></g></svg>
+					</a>
+				{/block:NextPage}
+			</div>
+		{/block:Pagination}
 
 	</main>
 
