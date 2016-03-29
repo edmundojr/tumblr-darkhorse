@@ -11,6 +11,7 @@
 	font-size: .8em;
 	font-style: normal;
 	font-weight: bold;
+	letter-spacing: .025em;
 	line-height: 1.875;
 	text-align: left;
 	text-transform: uppercase;
@@ -23,7 +24,11 @@
 		padding: 0 1em 0 2em;
 		text-decoration: none;
 		color: $iron;
-		transition: color $duration, opacity $duration, visibility $duration, transform $duration $easeOutBack;
+		transition:
+			color $duration,
+			opacity $duration,
+			visibility $duration,
+			transform $duration $easeOutBack;
 		opacity: 0;
 		visibility: hidden;
 
@@ -57,15 +62,22 @@
 				height: 2px;
 				margin-top: -2px;
 				background: $iron;
-				box-shadow: 3px 6px 0 $iron, 3px -6px 0 $iron;
-				transition: background $duration, box-shadow $duration, transform $duration;
+				box-shadow:
+					3px 6px 0 $iron,
+					3px -6px 0 $iron;
+				transition:
+					background $duration,
+					box-shadow $duration,
+					transform $duration;
 				content: "";
 			}
 
 			&:hover::before,
 			&:focus::before {
 				background: $accent-color;
-				box-shadow: 3px 6px 0 $accent-color, 3px -6px 0 $accent-color;
+				box-shadow:
+					3px 6px 0 $accent-color,
+					3px -6px 0 $accent-color;
 			}
 		}
 
@@ -101,7 +113,9 @@
 
 				&::before {
 					background: $accent-color;
-					box-shadow: -4px 7px 0 $accent-color, -4px -7px 0 $accent-color;
+					box-shadow:
+						-4px 7px 0 $accent-color,
+						-4px -7px 0 $accent-color;
 					transform: translateX(4px);
 				}
 			}
