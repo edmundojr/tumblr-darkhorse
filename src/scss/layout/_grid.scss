@@ -1,9 +1,7 @@
 //
-// Grid system
+// Layout: Container
 // ----------------------------------------------------------------------------
-
-
-// Container
+// Can't get any simpler than that
 
 .container {
 	@include clearfix();
@@ -11,51 +9,4 @@
 	width: 90%;
 	max-width: $maxWidth;
 	margin: 0 auto;
-}
-
-
-// Row
-
-.row {
-	@include clearfix();
-}
-
-// Fluid columns
-
-.col {
-	float: left;
-	width: 100%;
-
-	// Gutter
-
-	@if global-variable-exists(gutter) {
-		padding: 0 ($gutter / 2);
-	}
-
-	// Column fractions
-
-	&-1-2 {
-		@extend .col;
-		width: percentage(1/2);
-	}
-
-	&-1-3 {
-		@extend .col;
-		width: percentage(1/3);
-	}
-
-	&-2-3 {
-		@extend .col;
-		width: percentage(2/3);
-	}
-
-	&-1-4 {
-		@extend .col;
-		width: percentage(1/4);
-	}
-
-	&-3-4 {
-		@extend .col;
-		width: percentage(3/4);
-	}
 }
