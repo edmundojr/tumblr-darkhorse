@@ -96,6 +96,10 @@
 			color: $iron;
 			transition: all $duration;
 
+			.like_button {
+				margin-top: 4px;
+			}
+
 			svg {
 				max-width: 20px;
 				fill: $iron;
