@@ -70,9 +70,8 @@
 
 		svg {
 			display: inline-block;
-			vertical-align: bottom;
 			max-width: 24px;
-			margin-right: .5em;
+			margin: -6px .5em 0 0;
 			fill: $accent-color;
 		}
 	}
