@@ -221,6 +221,17 @@
 			</header>
 		{/block:DayPage}
 
+		{block:NoSearchResults}
+			<div class="post">
+				<h1 class="post__title">
+					{lang:No results found}
+				</h1>
+				<p>
+					{lang:No posts containing SearchQuery 2}
+				</p>
+			</div>
+		{/block:NoSearchResults}
+
 		{block:Posts}
 			<article class="post post--{PostType} {block:Quote}post--quote--{Length}{/block:Quote}">
 
