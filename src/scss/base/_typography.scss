@@ -116,3 +116,25 @@ h4 {
 		width: 100%;
 	}
 }
+
+
+// Main header
+// ----------------------------------------------
+
+.main__header {
+	position: relative;
+	padding: 0 $gutter $gutter;
+	font-size: .9em;
+	font-style: italic;
+	text-align: center;
+	color: $iron;
+	opacity: 1;
+
+	// Color tag, search query, and date
+
+	.search_query,
+	.tag,
+	.date_string {
+		color: $accent-color;
+	}
+}

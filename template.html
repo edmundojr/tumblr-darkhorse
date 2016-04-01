@@ -206,6 +206,21 @@
 
 	<main class="main container" role="main">
 
+		{block:SearchPage}
+			<header class="main__header">
+				{lang:Search results for SearchQuery 2}
+			</header>
+		{/block:SearchPage}
+			<header class="main__header">
+				{lang:Showing posts tagged Tag 2}
+			</header>
+		{/block:TagPage}
+		{block:DayPage}
+			<header class="main__header">
+				{lang:Posted on DayOfWeek DayOfMonth Month Year 2}
+			</header>
+		{/block:DayPage}
+
 		{block:Posts}
 			<article class="post post--{PostType} {block:Quote}post--quote--{Length}{/block:Quote}">
 
