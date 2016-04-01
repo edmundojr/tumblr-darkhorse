@@ -29,6 +29,7 @@
 		visibility: hidden;
 
 		// Add delay to each item
+
 		@for $i from 1 to 10 {
 			&:nth-child(#{$i}) {
 				transform: translateY($i * -10px);
