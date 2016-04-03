@@ -44,6 +44,7 @@
 	padding-bottom: 56.25%;
 	height: 0;
 	margin: -1px -1px 0;
+	background: black;
 
 	iframe,
 	object {
@@ -60,6 +61,16 @@
 // ----------------------------------------------
 
 .audio-container {
-	width: 100%;
-	margin: 0 auto;
+	padding: $gutter;
+	margin: -1px -1px 0;
+	background: black;
+
+	iframe,
+	object {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-width: 400px;
+		margin: 0 auto;
+	}
 }
