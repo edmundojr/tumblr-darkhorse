@@ -39,8 +39,7 @@
 // Responsive video
 // ----------------------------------------------
 
-.video-container,
-.audioplayer {
+.video-container {
 	position: relative;
 	padding-bottom: 56.25%;
 	height: 0;
@@ -54,4 +53,13 @@
 		width: 100%;
 		height: 100%;
 	}
+}
+
+
+// Responsive audio
+// ----------------------------------------------
+
+.audio-container {
+	width: 100%;
+	margin: 0 auto;
 }

@@ -285,7 +285,7 @@
 				{/block:Panorama}
 
 				{block:Photoset}
-					<figure class="photo">
+					<figure class="photo photo--photoset">
 						{Photoset}
 					</figure>
 					{block:Caption}
@@ -356,16 +356,16 @@
 				{/block:Chat}
 
 				{block:Audio}
-					<div class="audioplayer">
-						{block:AudioEmbed}
+					{block:AudioEmbed}
+						<div class="audio-container">
 							{AudioEmbed color="CCCDCE"}
-						{block:AudioEmbed}
-					</div>
-					<div class="post__content">
-						{block:Caption}
+						</div>
+					{block:AudioEmbed}
+					{block:Caption}
+						<div class="post__content">
 							{Caption}
-						{/block:Caption}
-					</div>
+						</div>
+					{/block:Caption}
 				{/block:Audio}
 
 				{block:Answer}
