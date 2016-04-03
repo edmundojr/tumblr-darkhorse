@@ -96,7 +96,8 @@
 			color: $iron;
 			transition: all $duration;
 
-			.like_button {
+			.like_button,
+			.reblog_button {
 				margin-top: 4px;
 			}
 
