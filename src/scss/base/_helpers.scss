@@ -43,7 +43,7 @@
 	position: relative;
 	padding-bottom: 56.25%;
 	height: 0;
-	margin: -1px -1px 0;
+	margin: -1px;
 	background: black;
 
 	iframe,
@@ -61,8 +61,8 @@
 // ----------------------------------------------
 
 .audio-container {
-	padding: $gutter;
-	margin: -1px -1px 0;
+	position: relative;
+	margin: -1px;
 	background: black;
 
 	iframe,
@@ -70,7 +70,10 @@
 		display: block;
 		width: 100%;
 		height: auto;
-		max-width: 400px;
 		margin: 0 auto;
+	}
+
+	.spotify_audio_player {
+		max-height: 80px;
 	}
 }
