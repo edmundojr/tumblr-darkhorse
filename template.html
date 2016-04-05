@@ -340,19 +340,19 @@
 								</a>
 							</h1>
 						{/block:Title}
-						<ul class="chat">
-							{block:Lines}
-								<li>
-									{block:Label}
-										<span class="chat__label">
-											{Label}
-										</span>
-									{/block:Label}
-									{Line}
-								</li>
-							{/block:Lines}
-						</ul>
 					</div>
+					<ul class="chat">
+						{block:Lines}
+							<li>
+								{block:Label}
+									<span class="chat__label">
+										{Label}
+									</span>
+								{/block:Label}
+								{Line}
+							</li>
+						{/block:Lines}
+					</ul>
 				{/block:Chat}
 
 				{block:Audio}
@@ -372,7 +372,7 @@
 					<ul class="chat chat--answer">
 						<li class="chat__question">
 							<span class="chat__label">
-								{lang:Asker asked 2}:
+								{lang:Asker asked}:
 							</span>
 							{Question}
 						</li>

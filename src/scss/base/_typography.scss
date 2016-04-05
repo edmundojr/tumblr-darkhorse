@@ -79,6 +79,19 @@ h4 {
 		}
 	}
 
+	a {
+		text-decoration: none;
+		color: darken($iron, 30%);
+		border-bottom: 1px solid darken($iron, 65%);
+		transition: color $duration, border $duration;
+
+		&:hover,
+		&:focus {
+			color: $accent-color;
+			border-color: darken($iron, 55%);
+		}
+	}
+
 	// Label
 
 	&__label {
@@ -90,11 +103,12 @@ h4 {
 	// Post Answer
 
 	&--answer {
-		padding-top: 0;
-		margin-top: 0;
+		padding: 0 0 ($gutter/1.5);
+		margin: 0;
 
 		li {
-			padding: 2em $gutter;
+			padding-left: $gutter;
+			padding-right: $gutter;
 			border-top: none;
 		}
 	}
@@ -103,8 +117,14 @@ h4 {
 
 	&__question {
 		position: relative;
+		padding-top: 2em;
+		padding-bottom: 2em;
 		margin: 0 -1px;
 		background: rgba(255,255,255,.1);
+
+		span a {
+			color: $accent-color;
+		}
 
 		// Question indicator
 
