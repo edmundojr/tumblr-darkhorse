@@ -62,16 +62,16 @@ h4 {
 }
 
 
-// Post Chat
+// Post Chat and Answer
 // ----------------------------------------------
 
 .chat {
-	padding: 0;
+	padding: ($gutter/2.5) 0 ($gutter/1.5);
+	margin: 1em 0;
 	list-style: none;
 
 	li {
 		padding: 1em $gutter;
-		margin: 0 (-$gutter);
 		border-top: 1px solid rgba(255,255,255,.03);
 
 		&:first-child {
@@ -86,6 +86,40 @@ h4 {
 		font-weight: bold;
 		color: $accent-color;
 	}
+
+	// Post Answer
+
+	&--answer {
+		padding-top: 0;
+		margin-top: 0;
+
+		li {
+			padding: 2em $gutter;
+			border-top: none;
+		}
+	}
+
+	// Question
+
+	&__question {
+		position: relative;
+		margin: 0 -1px;
+		background: rgba(255,255,255,.1);
+
+		// Question indicator
+
+		&::before {
+			position: absolute;
+			bottom: 100%;
+			left: 1px;
+			border-left: 15px solid rgba(255,255,255,0.125);
+			border-right: 15px solid transparent;
+			border-top: 15px solid transparent;
+			box-shadow: -1px 0 0 rgba(255,255,255,0.15);
+			content: "";
+		}
+	}
+
 }
 
 

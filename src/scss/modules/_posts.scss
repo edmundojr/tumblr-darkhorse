@@ -173,4 +173,10 @@
 			transform: translate(-1em, 50%);
 		}
 	}
+
+	// Post type chat
+
+	&--chat {
+		border-top: none;
+	}
 }

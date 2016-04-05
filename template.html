@@ -369,17 +369,22 @@
 				{/block:Audio}
 
 				{block:Answer}
-					<ul class="chat">
-						<li>
+					<ul class="chat chat--answer">
+						<li class="chat__question">
 							<span class="chat__label">
-								{Asker}:
+								{lang:Asker asked 2}:
 							</span>
 							{Question}
 						</li>
+						<li class="chat__answer">
+							{block:Answerer}
+								<span class="chat__label">
+									{Answerer}:
+								</span>
+							{/block:Answerer}
+							{Answer}
+						</li>
 					</ul>
-					<div class="post__content">
-						{Answer}
-					</div>
 				{/block:Answer}
 
 				<aside class="post__meta--aside">
