@@ -110,6 +110,11 @@ h4 {
 			padding-left: $gutter;
 			padding-right: $gutter;
 			border-top: none;
+
+			&:first-child {
+				padding-top: 2em;
+				padding-bottom: 2em;
+			}
 		}
 	}
 
@@ -117,12 +122,10 @@ h4 {
 
 	&__question {
 		position: relative;
-		padding-top: 2em;
-		padding-bottom: 2em;
 		margin: 0 -1px;
 		background: rgba(255,255,255,.1);
 
-		// Question indicator
+		// Question arrow
 
 		&::before {
 			position: absolute;
