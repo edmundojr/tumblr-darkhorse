@@ -179,4 +179,14 @@
 	&--answer {
 		border-top: none;
 	}
+
+	// Post type link
+
+	&--link {
+		&__excerpt {
+			padding-left: 2.25em;
+			margin: -.5em 0 1.5em;
+			opacity: .75;
+		}
+	}
 }
