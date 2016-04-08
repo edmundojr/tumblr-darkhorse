@@ -9,13 +9,16 @@
 	font-style: italic;
 	text-align: center;
 
+	a {
+		color: inherit;
+	}
+
 	&__title {
 		font-size: 1.6em;
 		color: $accent-color;
 
 		a {
 			text-decoration: none;
-			color: inherit;
 		}
 	}
 
