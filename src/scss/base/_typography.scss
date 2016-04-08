@@ -79,6 +79,8 @@ h4 {
 		}
 	}
 
+	// Links
+
 	a {
 		text-decoration: none;
 		color: darken($iron, 30%);
@@ -100,7 +102,7 @@ h4 {
 		color: $accent-color;
 	}
 
-	// Post Answer
+	// Answer
 
 	&--answer {
 		padding: 0 0 ($gutter/1.5);
