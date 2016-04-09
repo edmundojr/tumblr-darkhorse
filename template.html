@@ -24,7 +24,6 @@
 	<meta name="if:Show Random" content="1">
 	<meta name="if:Show RSS feed" content="1">
 	<meta name="if:Show Search" content="1">
-	<meta name="if:Show Like Button" content="1">
 	<meta name="if:Show Reblog Button" content="1">
 	<meta name="if:Show Share Button" content="1">
 
@@ -404,11 +403,11 @@
 				</aside>
 
 				<footer class="post__meta--footer">
-					{block:IfShowLikeButton}
+					{block:IfLikeButton}
 						<div class="post__meta__item">
 							{LikeButton color="CCCDCE" size="20"}
 						</div>
-					{/block:IfShowLikeButton}
+					{/block:IfLikeButton}
 					{block:IfShowReblogButton}
 						<div class="post__meta__item">
 							{ReblogButton color="CCCDCE" size="20"}
