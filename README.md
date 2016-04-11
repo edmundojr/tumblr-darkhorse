@@ -1,10 +1,11 @@
-# Dark Horse, a Vader-inspired Tumblr theme
+# Dark Side, a Vader-inspired Tumblr theme
 
-Inspired by the Star Wars universe and the mysterious and most badass Sith Lord ever, Dark Horse is all about Darth Vader and the dark side of the Force. And space.
+Inspired by the Star Wars universe and the most badass Sith Lord ever, Dark Side is all about Lord Darth Vader and the dark side of the Force.
 
 ## Theme features
 
 - Social media links: a wide range of icons ready to use;
+- Disqus commenting system;
 - Responsive: this theme adapts to each and every screen available;
 - Share widget: share your posts on social networks with easy;
 - Customisable: a wide range of customisation options;
@@ -13,7 +14,7 @@ Inspired by the Star Wars universe and the mysterious and most badass Sith Lord 
 
 ## Thank you
 
-This theme was designed and coded by [Edmundo Santos](http://edmundojr.com).
+Dark Side was designed and coded by [Edmundo Santos](http://edmundojr.com).
 
 Here’s some well deserved thanks for some folks around the web:
 
