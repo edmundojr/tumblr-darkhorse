@@ -22,12 +22,12 @@ var options = {
 
 	sass: {
 		files	    : 'src/scss/**/*.scss',
-		destination : 'dist/css'
+		destination : 'theme/css'
 	},
 
 	scripts: {
 		files       : 'src/js/**/*.js',
-		destination : 'dist/js'
+		destination : 'theme/js'
 	}
 };
 
