@@ -2,15 +2,17 @@
 
 Inspired by the Star Wars universe and the most badass Sith Lord ever, Dark Side is all about Lord Darth Vader and the dark side of the Force.
 
+[Check out the demo!](https://www.tumblr.com/theme/40329)
+
 ## Theme features
 
-- Social media links: a wide range of icons ready to use;
+- Responsive;
+- Social media links;
 - Disqus commenting system;
-- Responsive: this theme adapts to each and every screen available;
-- Share widget: share your posts on social networks with easy;
-- Customisable: a wide range of customisation options;
-- Open source: all code is available at [GitHub](http://github.com/edmundojr/tumblr-darkhorse);
-- Support: if you have any suggestions or found some nasty Jedi-bugs, [open a issue](https://github.com/edmundojr/tumblr-darkhorse/issues/new) on Github and I’ll have a look into it.
+- Share widget;
+- Customisable;
+- Open source;
+- Support: if you have any suggestions or found some nasty Jedi-bugs, [open a issue](https://github.com/edmundojr/tumblr-darkhorse/issues/new) and I’ll have a look into it.
 
 ## Thank you
 
