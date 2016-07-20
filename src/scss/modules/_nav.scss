@@ -22,8 +22,6 @@
 		position: relative;
 		display: block;
 		padding: 0 1em 0 2em;
-		text-decoration: none;
-		color: $iron;
 		transition: color $duration, opacity $duration, visibility $duration, transform $duration $easeOutBack;
 		opacity: 0;
 		visibility: hidden;
@@ -35,11 +33,6 @@
 				transform: translateY($i * -10px);
 				transition-delay: $i * 0.06s;
 			}
-		}
-
-		&:hover,
-		&:focus {
-			color: $accent-color;
 		}
 
 		// Toggle icon
@@ -58,16 +51,16 @@
 				width: 18px;
 				height: 2px;
 				margin-top: -2px;
-				background: $iron;
-				box-shadow: 3px 6px 0 $iron, 3px -6px 0 $iron;
+				background: currentColor;
+				box-shadow: 3px 6px 0 currentColor, 3px -6px 0 currentColor;
 				transition: background $duration, box-shadow $duration, transform $duration;
 				content: "";
 			}
 
 			&:hover::before,
 			&:focus::before {
-				background: $accent-color;
-				box-shadow: 3px 6px 0 $accent-color, 3px -6px 0 $accent-color;
+				background: currentColor;
+				box-shadow: 3px 6px 0 currentColor, 3px -6px 0 currentColor;
 			}
 		}
 
@@ -99,14 +92,10 @@
 			opacity: 1;
 			transform: none;
 
-			&--toggle {
-				color: $accent-color;
-
-				&::before {
-					background: $accent-color;
-					box-shadow: -4px 7px 0 $accent-color, -4px -7px 0 $accent-color;
-					transform: translateX(4px);
-				}
+			&--toggle::before {
+				background: currentColor;
+				box-shadow: -4px 7px 0 currentColor, -4px -7px 0 currentColor;
+				transform: translateX(4px);
 			}
 		}
 	}

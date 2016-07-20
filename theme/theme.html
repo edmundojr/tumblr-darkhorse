@@ -12,14 +12,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{block:Hidden}
+	<!-- Custom Colors -->
+	<meta name="color:Text" content="#cccdce">
+	<meta name="color:Accent" content="{AccentColor}">
+	<meta name="color:Background" content="{BackgroundColor}">
+
+	<!-- Disqus and Google Analitycs -->
 	<meta name="text:Disqus Shortname" content="">
 	<meta name="text:Google Analytics ID" content="">
 
+	<!-- Background and Header customizations -->
 	<meta name="if:Show Stars Background" content="1">
 	<meta name="if:Show Avatar" content="0">
 	<meta name="if:Show Title" content="1">
 	<meta name="if:Show Description" content="1">
 
+	<!-- Menu Items -->
 	<meta name="if:Show Archive" content="1">
 	<meta name="if:Show Random" content="1">
 	<meta name="if:Show RSS feed" content="1">
@@ -28,6 +36,7 @@
 	<meta name="if:Show Reblog Button" content="1">
 	<meta name="if:Show Share Button" content="1">
 
+	<!-- Social Icons on Header -->
 	<meta name="if:Show Social Icons" content="1">
 	<meta name="text:Username on Dribbble" content="">
 	<meta name="text:Username on Facebook" content="">
@@ -51,6 +60,30 @@
 	<link rel="stylesheet" href="//static.tumblr.com/fjonrht/sslo5hes5/main.css">
 
 	<style>
+	/* Custom Text and Background Color */
+	body {
+		color: #cccdce;
+		background: #04090d;
+		color: {color:Text};
+		background: {color:Background};
+	}
+
+	/* Custom Accent Color */
+	.header__title,
+	.post__title,
+	.chat__label,
+	.main__header .search_query,
+	.main__header .tag,
+	.main__header .date,
+	a:hover, a:focus,
+	a:hover svg, a:focus svg {
+		color: #fbe800;
+		fill: #fbe800;
+		color: {color:Accent};
+		fill: {color:Accent};
+	}
+
+	/* Padawan's Custom CSS */
 	{CustomCSS}
 	</style>
 

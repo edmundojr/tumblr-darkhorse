@@ -17,13 +17,12 @@
 	a {
 		display: inline-block;
 		font-weight: bold;
-		text-decoration: none;
-		color: darken($iron, 30%);
-		transition: color $duration;
+		opacity: .75;
+		transition: opacity $duration, color $duration;
 
 		&:hover,
 		&:focus {
-			color: $accent-color;
+			opacity: 1;
 		}
 	}
 }

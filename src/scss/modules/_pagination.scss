@@ -16,14 +16,7 @@
 	&__link {
 		display: inline-block;
 		padding: .5em 1.5em;
-		text-decoration: none;
-		color: $iron;
 		transition: color $duration;
-
-		&:hover,
-		&:focus {
-			color: $accent-color;
-		}
 
 		&--prev {
 			padding-left: .5em;
@@ -49,7 +42,6 @@
 	&__arrow {
 		display: inline-block;
 		margin-top: -5px;
-		fill: currentColor;
 		transition: transform $duration $easeOutBack;
 	}
 }

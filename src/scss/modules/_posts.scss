@@ -31,15 +31,12 @@
 		// Links
 
 		a {
-			text-decoration: none;
-			color: darken($iron, 30%);
-			border-bottom: 1px solid darken($iron, 65%);
+			border-bottom: 1px solid rgba(255,255,255,.1);
 			transition: color $duration, border $duration;
 
 			&:hover,
 			&:focus {
-				color: $accent-color;
-				border-color: darken($iron, 55%);
+				border-color: rgba(255,255,255,.4);
 			}
 		}
 	}
@@ -53,7 +50,6 @@
 
 		a {
 			display: inline-block;
-			text-decoration: none;
 			color: inherit;
 			border: none;
 			transition: color $duration;
@@ -61,10 +57,6 @@
 			&:hover,
 			&:focus {
 				color: white;
-
-				svg {
-					fill: currentColor;
-				}
 			}
 		}
 
@@ -72,7 +64,6 @@
 			display: inline-block;
 			max-width: 24px;
 			margin: -6px .5em 0 0;
-			fill: $accent-color;
 		}
 	}
 
@@ -92,8 +83,6 @@
 			position: relative;
 			float: left;
 			padding: .5em 1em;
-			text-decoration: none;
-			color: $iron;
 			transition: all $duration;
 
 			.like_button,
@@ -103,21 +92,17 @@
 
 			svg {
 				max-width: 20px;
-				fill: $iron;
+				fill: currentColor;
 				cursor: pointer;
 				transition: all $duration;
 			}
 
 			&:hover,
 			&:focus {
-				color: $accent-color;
-
-				svg {
-					fill: $accent-color;
-				}
 
 				.share a {
 					opacity: 1;
+					visibility: visible;
 					transform: none !important;
 				}
 			}
@@ -136,7 +121,8 @@
 				float: left;
 				padding: .5em .75em;
 				opacity: 0;
-				transition: all $duration $easeOutBack;
+				visibility: hidden;
+				transition: transform $duration $easeOutBack, opacity $duration $easeOutBack;
 
 				&:nth-child(1) {
 					transform: translate(100%,-100%);
@@ -171,6 +157,11 @@
 			left: $gutter;
 			bottom: 0;
 			transform: translate(-1em, 50%);
+
+			.post__meta__item:hover,
+			.post__meta__item:focus {
+				transform: scale(1.2);
+			}
 		}
 	}
 

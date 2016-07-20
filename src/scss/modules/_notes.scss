@@ -24,15 +24,14 @@
 		padding-left: .75em;
 
 		a {
-			text-decoration: none;
-			color: darken($iron, 30%);
-			border-bottom: 1px solid darken($iron, 65%);
-			transition: color $duration, border $duration;
+			opacity: .5;
+			border-bottom: 1px solid rgba(255,255,255,.1);
+			transition: opacity $duration, color $duration, border $duration;
 
 			&:hover,
 			&:focus {
-				color: $accent-color;
-				border-color: darken($iron, 55%);
+				opacity: 1;
+				border-color: rgba(255,255,255,.4);
 			}
 		}
 	}

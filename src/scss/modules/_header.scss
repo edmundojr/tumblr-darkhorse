@@ -9,17 +9,9 @@
 	font-style: italic;
 	text-align: center;
 
-	a {
-		color: inherit;
-	}
-
 	&__title {
 		font-size: 1.6em;
 		color: $accent-color;
-
-		a {
-			text-decoration: none;
-		}
 	}
 
 	&__description {
@@ -52,19 +44,16 @@
 		display: block;
 		width: 30px;
 		height: 30px;
-		color: $iron;
 		transition: transform $duration;
 
 		&:hover,
 		&:focus {
-			color: $accent-color;
 			transform: scale(1.2);
 		}
 	}
 
 	svg {
 		max-width: 20px;
-		fill: currentColor;
 		transition: color $duration;
 	}
 }
