@@ -2,7 +2,8 @@
 
 Inspired by the Star Wars universe and the most badass Sith Lord ever, Dark Side is all about Lord Darth Vader and the dark side of the Force.
 
-[Check out the demo!](https://www.tumblr.com/theme/40329)
+- [Install the theme →](https://www.tumblr.com/theme/40329)
+- [Check out the demo →](https://darkside-theme.tumblr.com/)
 
 ## Theme features
 
